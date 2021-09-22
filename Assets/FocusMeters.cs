@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FocusMeters : MonoBehaviour
 {
@@ -62,7 +63,8 @@ public class FocusMeters : MonoBehaviour
         }
         if (WorkFocus == 0 || VideoFocus == 0)
         {
-            Debug.Log ("You Lose");
+            //Debug.Log ("You Lose");
+            SceneManager.LoadScene("LoseScene");
         }
 
         WorkText.text = "Work Forcus: " + WorkFocus;

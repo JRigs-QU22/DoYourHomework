@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DueTime : MonoBehaviour
 {
@@ -36,7 +37,8 @@ public class DueTime : MonoBehaviour
         }
         if (Current == Due)
         {
-            Debug.Log("You Lose");
+            //Debug.Log("You Lose");
+            SceneManager.LoadScene("LoseScene");
         }
         duetime.text = "Assignment Due: 11:" + Due;
         if (Current < 10)
