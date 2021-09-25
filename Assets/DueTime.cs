@@ -10,19 +10,23 @@ public class DueTime : MonoBehaviour
     public int Current = 00;
 
     public bool Extension;
+    public bool TextChange;
 
     public Text duetime;
     public Text currenttime;
-    public Text waittime;
+    public Text ExtensionText;
 
     public float TimeChange;
     public float Wait;
 
+    public float DeleteTextTime;
     // Start is called before the first frame update
     void Start()
     {
         TimeChange = 3f;
         Wait = 9f;
+        DeleteTextTime = 1f;
+        TextChange = false;
     }
 
     // Update is called once per frame
@@ -43,11 +47,22 @@ public class DueTime : MonoBehaviour
         duetime.text = "Assignment Due: 11:" + Due;
         if (Current < 10)
         {
-            currenttime.text = "Current Time: 11:0" + Current;
+            currenttime.text = "11:0" + Current;
         }
         else if (Current >= 10)
         {
-            currenttime.text = "Current Time: 11:" + Current;
+            currenttime.text = "11:" + Current;
+        }
+
+        if (TextChange == true)
+        {
+            DeleteTextTime -= Time.deltaTime;
+            if (DeleteTextTime < 0)
+            {
+                ExtensionText.text = "";
+                TextChange = false;
+                DeleteTextTime = 1f;
+            }
         }
 
 
@@ -57,13 +72,14 @@ public class DueTime : MonoBehaviour
             if (Wait < 0)
             {
                 Due = Due + 10;
-                Debug.Log("Extension Granted");
+                //Debug.Log("Extension Granted");
+                ExtensionText.text = "Extension Granted";
                 Wait = 9f;
                 Extension = false;
+                TextChange = true;
             }
         }
 
-        waittime.text = "Wait Time: " + Wait;
     }
 
     public void RequestExtension()
@@ -77,10 +93,13 @@ public class DueTime : MonoBehaviour
         }
         else
         {
-
-                Debug.Log("Extension Denied");
-
             
+                //Debug.Log("Extension Denied");
+            ExtensionText.text = "Extension Denied";
+            TextChange = true;
+            
+
+
         }
     }
 }
