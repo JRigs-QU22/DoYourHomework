@@ -5,16 +5,16 @@ using UnityEngine.Video;
 
 public class Video : MonoBehaviour
 {
-    public VideoPlayer Pausable;
+    public VideoPlayer Pausable; //public video player component
 
-    public bool isPlaying;
+    public bool isPlaying; //bool to see if video is playing
 
-    public WorkCompletion WC;
+    public WorkCompletion WC; //public Work Completion script to allow interaction with other script
 
     // Start is called before the first frame update
     void Start()
     {
-        Pausable = this.GetComponent<VideoPlayer>();
+        Pausable = this.GetComponent<VideoPlayer>(); //sets video player
         
         
     }
@@ -22,11 +22,11 @@ public class Video : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (WC.isWorking == false)
+        if (WC.isWorking == false) //if player isn't working, play video
         {
             isPlaying = true;
         }
-        else
+        else // otherwise pause video
         {
             isPlaying = false;
         }

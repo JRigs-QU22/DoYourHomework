@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class FocusMeters : MonoBehaviour
+public class FocusMeters : MonoBehaviour //***UNUSED*** Leftover from MVP
 {
     public bool isWorking;
     public bool isWatching;
@@ -88,4 +88,4 @@ public class FocusMeters : MonoBehaviour
         
 
     }
-}
+} //***UNUSED*** Leftover from MVP

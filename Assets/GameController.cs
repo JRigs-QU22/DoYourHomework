@@ -17,12 +17,12 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void Play()
+    public void Play() //function for button that loads main game level
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("MainGame"); 
     }
 
-    public void MainMenu()
+    public void MainMenu() //function for button that loads main menu level
     {
         SceneManager.LoadScene("MainMenu");
     }
