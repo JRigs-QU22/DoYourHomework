@@ -6,24 +6,29 @@ using UnityEngine.Video;
 public class Video : MonoBehaviour
 {
     public VideoPlayer Pausable;
+
+    public bool isPlaying;
+
+    public WorkCompletion WC;
+
     // Start is called before the first frame update
     void Start()
     {
         Pausable = this.GetComponent<VideoPlayer>();
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Pausable =  this.GetComponent<Video>();
-        if (Input.GetKeyDown (KeyCode.Space))
+        if (WC.isWorking == false)
         {
-            Pausable.Pause();
+            isPlaying = true;
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else
         {
-            Pausable.Play();
+            isPlaying = false;
         }
     }
 }

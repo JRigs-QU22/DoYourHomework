@@ -281,11 +281,10 @@ MonoBehaviour:
   Completion: 0
   EnergyLevel: 0
   isWorking: 0
-  VideoObject: {fileID: 939394290}
-  WorkObject: {fileID: 493093201}
   VideoPlay: {fileID: 939394291}
   CompletionBar: {fileID: 1581960044}
   Energy: {fileID: 324201915}
+  LowEnergy: {fileID: 240550256}
 --- !u!1 &156256416
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5, y: 0.30000305}
+  m_AnchoredPosition: {x: -2.5, y: 0.2999878}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &212670646
@@ -483,6 +482,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &240550254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 240550255}
+  - component: {fileID: 240550257}
+  - component: {fileID: 240550256}
+  m_Layer: 5
+  m_Name: LowEnergy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &240550255
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240550254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 907906991}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.78625005, y: 0.8088904}
+  m_AnchorMax: {x: 0.78625005, y: 0.8088904}
+  m_AnchoredPosition: {x: -8.199997, y: 1}
+  m_SizeDelta: {x: 125.14557, y: 69.841415}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &240550256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240550254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &240550257
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240550254}
+  m_CullTransparentMesh: 0
 --- !u!1 &248581162
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.72749996, y: 0.22238204}
   m_AnchorMax: {x: 0.72749996, y: 0.22238204}
-  m_AnchoredPosition: {x: 2, y: 1.9899826}
+  m_AnchoredPosition: {x: 2, y: 1.9899902}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &279021079
@@ -734,9 +812,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 70
   m_WholeNumbers: 0
-  m_Value: 50
+  m_Value: 70
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1205,6 +1283,7 @@ RectTransform:
   - {fileID: 1391292867}
   - {fileID: 279021078}
   - {fileID: 1575899722}
+  - {fileID: 240550255}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1227,6 +1306,7 @@ GameObject:
   - component: {fileID: 939394294}
   - component: {fileID: 939394295}
   - component: {fileID: 939394297}
+  - component: {fileID: 939394296}
   m_Layer: 0
   m_Name: VideoObject
   m_TagString: Video
@@ -1258,14 +1338,14 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 1
-  m_Url: 
+  - 0.7
+  m_Url: http://mywebspace.quinnipiac.edu/jtrigsby/410/Multitask/Deadlineofthedead-1.m4v
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -1381,6 +1461,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &939394296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939394290}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28974c31b6d2a2e4b8bfa6c53cbf17bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomVideo: Deadlineofthedead-1.m4v
 --- !u!114 &939394297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,7 +1486,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f486006469c7975419cefcb82f67cc93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pausable: {fileID: 0}
+  Pausable: {fileID: 939394291}
+  isPlaying: 0
+  WC: {fileID: 95817647}
 --- !u!1 &944277290
 GameObject:
   m_ObjectHideFlags: 0
