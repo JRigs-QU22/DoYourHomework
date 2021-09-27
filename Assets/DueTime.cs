@@ -90,6 +90,7 @@ public class DueTime : MonoBehaviour
         if (Due < 59) //if current due time is before 11:59, you can request an extension
         {
             Extension = true;
+            ExtensionText.text = "Awaiting Reply...";
         }
         else //else it is denied and text is updated
         {

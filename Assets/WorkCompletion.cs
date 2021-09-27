@@ -42,7 +42,7 @@ public class WorkCompletion : MonoBehaviour
         {
             isWorking = true;
         }
-        if (MaxCharacters >= 5) //if player is greater than or equal to 5, set MaxCharacters to 1 (to prevent bool swap) and add 1 point to completion (200 needed to win)
+        if (MaxCharacters >= 5) //if player is greater than or equal to 4, set MaxCharacters to 1 (to prevent bool swap) and add 1 point to completion (200 needed to win)
         {
             MaxCharacters = 1;
             Completion = Completion + 1;
